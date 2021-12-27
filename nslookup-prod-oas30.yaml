@@ -1,0 +1,23 @@
+openapi: "3.0.1"
+info:
+  title: "nslookup"
+  version: "2021-12-26T23:46:11Z"
+servers:
+- url: "https://dmzgnvy7xf.execute-api.ap-northeast-1.amazonaws.com/{basePath}"
+  variables:
+    basePath:
+      default: "prod"
+paths:
+  /api/v1/nslookup:
+    get:
+      parameters:
+      - name: "domain"
+        in: "query"
+        description: "名前解決対象のドメイン名を指定する"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "リクエスト成功時"
+      tags:
+        - "nslookup テストアプリ"
